@@ -9,6 +9,7 @@
   },
   "scripts": {
     "run": "node main.ts",
+    "preview": "node scripts/serve-output.mjs out",
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-output.mjs",
     "check": "npm run test && npm run validate"

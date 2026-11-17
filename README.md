@@ -44,6 +44,7 @@ The grader supplies `/input/snapshot.json` and `/output`. Locally, point the ent
 mkdir -p out
 MAKEFUN_OUTPUT_DIR=out node main.ts --input /path/to/input/snapshot.json
 npm run validate -- out
+npm run preview
 ```
 
 No install step is required for the submitted program: it uses Node 22’s native TypeScript support and the Node standard library only.
@@ -76,6 +77,7 @@ dashboard/app.css           original visual system
 dashboard/app.js            offline search, filters, sort, pagination, and protocol detail drawer
 vendor/makefun-board.ts     official make.fun dossier builder, verified against the kit manifest
 screenshots/                three presentation-ready judge states
+PRESENTATION.md             concise live-demo narrative and final-artifact rehearsal
 ```
 
 ## Safety notes
