@@ -1,0 +1,17 @@
+name: smoke
+
+on:
+  push:
+    branches: [main, "arena/**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build the entry from the synthetic fixture and check the gate's invariants
+        run: node scripts/smoke.mjs

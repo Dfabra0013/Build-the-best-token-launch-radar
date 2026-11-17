@@ -1,0 +1,428 @@
+{
+  "as_of": "2026-11-14",
+  "source": "DefiLlama https://api.llama.fi/protocols, fetched 2026-11-14T00:00:00.000Z (synthetic fixture for CI; not the sealed snapshot)",
+  "floor_usd": 50000000,
+  "protocols": [
+    {
+      "slug": "fixture-bridge",
+      "name": "Fixture Canonical Bridge",
+      "category": "Canonical Bridge",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 80000000,
+      "change_7d": 1.5,
+      "mcap_usd": null,
+      "listed_at": "2025-05-01",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-cex",
+      "name": "FixtureCEX Pro",
+      "category": "CEX",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 500000000,
+      "change_7d": 0.9,
+      "mcap_usd": null,
+      "listed_at": "2020-05-01",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-comp-1",
+      "name": "Fixture Comp 1",
+      "category": "Lending",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 578368704,
+      "change_7d": -5.37,
+      "mcap_usd": 34212287,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-1",
+      "symbol": "FC1"
+    },
+    {
+      "slug": "fixture-comp-10",
+      "name": "Fixture Comp 10",
+      "category": "Dexs",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 94271008,
+      "change_7d": 6.13,
+      "mcap_usd": 72581680,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-10",
+      "symbol": "FC10"
+    },
+    {
+      "slug": "fixture-comp-11",
+      "name": "Fixture Comp 11",
+      "category": "Yield",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 727958419,
+      "change_7d": 3.77,
+      "mcap_usd": 277372458,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-11",
+      "symbol": "FC11"
+    },
+    {
+      "slug": "fixture-comp-12",
+      "name": "Fixture Comp 12",
+      "category": "Yield",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 876019261,
+      "change_7d": 4.32,
+      "mcap_usd": 205187687,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-12",
+      "symbol": "FC12"
+    },
+    {
+      "slug": "fixture-comp-13",
+      "name": "Fixture Comp 13",
+      "category": "Yield",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 747828960,
+      "change_7d": 15.16,
+      "mcap_usd": 250179640,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-13",
+      "symbol": "FC13"
+    },
+    {
+      "slug": "fixture-comp-14",
+      "name": "Fixture Comp 14",
+      "category": "RWA",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 522998113,
+      "change_7d": -13.4,
+      "mcap_usd": 285565469,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-14",
+      "symbol": "FC14"
+    },
+    {
+      "slug": "fixture-comp-15",
+      "name": "Fixture Comp 15",
+      "category": "RWA",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 211285261,
+      "change_7d": -12.21,
+      "mcap_usd": 61328290,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-15",
+      "symbol": "FC15"
+    },
+    {
+      "slug": "fixture-comp-16",
+      "name": "Fixture Comp 16",
+      "category": "RWA",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 215649470,
+      "change_7d": -5.27,
+      "mcap_usd": 37569778,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-16",
+      "symbol": "FC16"
+    },
+    {
+      "slug": "fixture-comp-17",
+      "name": "Fixture Comp 17",
+      "category": "CEX",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 575030524,
+      "change_7d": -2.04,
+      "mcap_usd": 55323953,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-17",
+      "symbol": "FC17"
+    },
+    {
+      "slug": "fixture-comp-18",
+      "name": "Fixture Comp 18",
+      "category": "CEX",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 194880271,
+      "change_7d": 17.78,
+      "mcap_usd": 15393221,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-18",
+      "symbol": "FC18"
+    },
+    {
+      "slug": "fixture-comp-2",
+      "name": "Fixture Comp 2",
+      "category": "Lending",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 207103978,
+      "change_7d": 8.68,
+      "mcap_usd": 54391876,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-2",
+      "symbol": "FC2"
+    },
+    {
+      "slug": "fixture-comp-3",
+      "name": "Fixture Comp 3",
+      "category": "Lending",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 803824174,
+      "change_7d": -0.23,
+      "mcap_usd": 61785548,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-3",
+      "symbol": "FC3"
+    },
+    {
+      "slug": "fixture-comp-4",
+      "name": "Fixture Comp 4",
+      "category": "Lending",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 34579119,
+      "change_7d": 2.69,
+      "mcap_usd": 3960362,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-4",
+      "symbol": "FC4"
+    },
+    {
+      "slug": "fixture-comp-5",
+      "name": "Fixture Comp 5",
+      "category": "Lending",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 31670084,
+      "change_7d": 7.75,
+      "mcap_usd": 3447845,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-5",
+      "symbol": "FC5"
+    },
+    {
+      "slug": "fixture-comp-6",
+      "name": "Fixture Comp 6",
+      "category": "Lending",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 494087800,
+      "change_7d": 5.62,
+      "mcap_usd": 56842833,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-6",
+      "symbol": "FC6"
+    },
+    {
+      "slug": "fixture-comp-7",
+      "name": "Fixture Comp 7",
+      "category": "Dexs",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 730011967,
+      "change_7d": 13.2,
+      "mcap_usd": 102830268,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-7",
+      "symbol": "FC7"
+    },
+    {
+      "slug": "fixture-comp-8",
+      "name": "Fixture Comp 8",
+      "category": "Dexs",
+      "chains": [
+        "Arbitrum",
+        "Base"
+      ],
+      "tvl_usd": 630740340,
+      "change_7d": -9.56,
+      "mcap_usd": 246308761,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-8",
+      "symbol": "FC8"
+    },
+    {
+      "slug": "fixture-comp-9",
+      "name": "Fixture Comp 9",
+      "category": "Dexs",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 861834060,
+      "change_7d": -11.75,
+      "mcap_usd": 334195737,
+      "listed_at": "2023-06-15",
+      "gecko_id": "fixture-comp-9",
+      "symbol": "FC9"
+    },
+    {
+      "slug": "fixture-early-0",
+      "name": "Fixture Early 0",
+      "category": "Yield",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 11536099,
+      "change_7d": -0.51,
+      "mcap_usd": null,
+      "listed_at": null,
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-early-1",
+      "name": "Fixture Early 1",
+      "category": "Lending",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 44580934,
+      "change_7d": 6.0,
+      "mcap_usd": null,
+      "listed_at": "2026-01-20",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-early-2",
+      "name": "Fixture Early 2",
+      "category": "RWA",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 27277989,
+      "change_7d": 7.12,
+      "mcap_usd": null,
+      "listed_at": "2026-01-20",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-early-3",
+      "name": "Fixture Early 3",
+      "category": "Dexs",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 38714076,
+      "change_7d": 9.4,
+      "mcap_usd": null,
+      "listed_at": "2026-01-20",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-early-4",
+      "name": "Fixture Early 4",
+      "category": "Onchain Capital Allocator",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 14161922,
+      "change_7d": null,
+      "mcap_usd": null,
+      "listed_at": "2026-01-20",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-v2",
+      "name": "Fixture Pool V2",
+      "category": "Lending",
+      "chains": [
+        "Base"
+      ],
+      "tvl_usd": 70000000,
+      "change_7d": 0.1,
+      "mcap_usd": null,
+      "listed_at": "2022-05-01",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-watch-a",
+      "name": "Fixture Watch Alpha",
+      "category": "Risk Curators",
+      "chains": [
+        "Ethereum",
+        "Base"
+      ],
+      "tvl_usd": 604349723,
+      "change_7d": 2.62,
+      "mcap_usd": null,
+      "listed_at": "2025-02-01",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-watch-b",
+      "name": "Fixture Watch Beta",
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "Base"
+      ],
+      "tvl_usd": 203756464,
+      "change_7d": 5.5,
+      "mcap_usd": null,
+      "listed_at": "2025-02-01",
+      "gecko_id": null,
+      "symbol": null
+    },
+    {
+      "slug": "fixture-wrapped",
+      "name": "Fixture Wrapped ETH",
+      "category": "Dexs",
+      "chains": [
+        "Ethereum"
+      ],
+      "tvl_usd": 90000000,
+      "change_7d": 0.4,
+      "mcap_usd": null,
+      "listed_at": "2024-05-01",
+      "gecko_id": null,
+      "symbol": null
+    }
+  ],
+  "watchlist": [
+    "fixture-watch-a",
+    "fixture-watch-b"
+  ]
+}

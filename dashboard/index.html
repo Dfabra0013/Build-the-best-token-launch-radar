@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Token Launch Radar — pre-token protocols, priced by the market</title>
+<meta name="description" content="Every protocol in DefiLlama's sealed record with no token carried, ranked by implied launch value from market comparables, each with an eight-step farm plan. Static page; no network.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23070b16'/%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%2335e0a1' stroke-width='6' opacity='.35'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2335e0a1' stroke-width='6' opacity='.7'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%2335e0a1'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <!-- radar mark: rings + sweep wedge + two blips, inline so the page needs nothing external -->
+    <svg class="brand-mark" width="46" height="46" viewBox="0 0 46 46" role="img" aria-label="radar sweep logo">
+      <circle cx="23" cy="23" r="21.5" fill="#0b1120" stroke="#35e0a1" stroke-opacity="0.45" stroke-width="1.6"/>
+      <circle cx="23" cy="23" r="13.5" fill="none" stroke="#35e0a1" stroke-opacity="0.35" stroke-width="1.2"/>
+      <circle cx="23" cy="23" r="6" fill="none" stroke="#35e0a1" stroke-opacity="0.6" stroke-width="1.2"/>
+      <path d="M23 23 L41 9 A22 22 0 0 0 12 4.6 Z" fill="#35e0a1" fill-opacity="0.28"/>
+      <circle cx="23" cy="23" r="2.4" fill="#35e0a1"/>
+      <circle cx="31.5" cy="17.5" r="1.7" fill="#f2c14e"/>
+      <circle cx="15" cy="28" r="1.3" fill="#f2c14e" fill-opacity="0.85"/>
+    </svg>
+    <div>
+      <h1>TOKEN LAUNCH <em>RADAR</em></h1>
+      <p class="tagline">Pre-token protocols in DefiLlama&rsquo;s record, priced against the market&rsquo;s own tokens — with the farm plan for each.</p>
+    </div>
+  </div>
+  <div class="snapshot-chip" id="snapshot-chip">Snapshot loading…</div>
+</header>
+
+<nav class="view-tabs" role="tablist" aria-label="Board views">
+  <button class="view-tab" id="tab-board" role="tab" aria-selected="true" aria-controls="board-panel">THE BOARD<small>ranked by implied launch value</small></button>
+  <button class="view-tab" id="tab-live" role="tab" aria-selected="false" aria-controls="live-panel">LIVE TOKENS<small>the comparables, shown plainly</small></button>
+</nav>
+
+<main id="board-panel" role="tabpanel" aria-labelledby="tab-board">
+
+  <section class="kpi-strip" aria-label="Board overview">
+    <div class="kpi"><div class="label">Watchlist coverage</div><div class="value" id="kpi-watchlist">—</div><div class="sub">house rule&rsquo;s pre-token floor, all priced</div></div>
+    <div class="kpi"><div class="label">Protocols priced</div><div class="value" id="kpi-board">—</div><div class="sub" id="kpi-board-sub">on the board</div></div>
+    <div class="kpi hero"><div class="label">Watchlist implied FDV</div><div class="value" id="kpi-wl-implied">—</div><div class="sub">sum over the 40 watchlist rows</div></div>
+    <div class="kpi"><div class="label">Median row implied</div><div class="value" id="kpi-median">—</div><div class="sub">across the whole board</div></div>
+    <div class="kpi"><div class="label">Comparables</div><div class="value" id="kpi-comps">—</div><div class="sub" id="kpi-comps-sub">ex-CEX, token-carrying</div></div>
+  </section>
+
+  <div class="honesty-strip">
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1 13 12H1L7 1Z" fill="none" stroke="#f2c14e" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.4v3.2M7 10.4v.1" stroke="#f2c14e" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <span><strong>Honesty first:</strong> implied value is this entry&rsquo;s model claim — not a prediction, not advice. DefiLlama&rsquo;s record is not proof a token will — or will not — exist.</span>
+    <button class="cat-chip" id="methodology-open" style="margin-left:auto;border-color:rgba(242,193,78,.4);color:#f2c14e">Methodology &amp; backtest</button>
+  </div>
+
+  <section class="filter-bar" aria-label="Filters">
+    <div class="search-wrap">
+      <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.75" fill="none" stroke="#8d99b8" stroke-width="1.6"/><path d="m10.3 10.3 3.4 3.4" stroke="#8d99b8" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search" type="text" autocomplete="off" spellcheck="false" placeholder="Search protocols or chains…  ( / )" aria-label="Search protocols">
+    </div>
+    <div class="seg" role="group" aria-label="Board subset">
+      <button id="seg-all" aria-pressed="true">All rows</button>
+      <button id="seg-watchlist" aria-pressed="false">Watchlist</button>
+      <button id="seg-early" aria-pressed="false">Early finds</button>
+    </div>
+    <select class="control" id="sort" aria-label="Sort order">
+      <option value="rank" selected>Sort · implied value</option>
+      <option value="tvl">Sort · TVL</option>
+      <option value="change">Sort · 7d change</option>
+      <option value="age">Sort · age</option>
+      <option value="name">Sort · name A–Z</option>
+    </select>
+    <select class="control" id="min-tvl" aria-label="Minimum TVL">
+      <option value="0" selected>Min TVL · any</option>
+      <option value="10000000">Min TVL · $10M</option>
+      <option value="25000000">Min TVL · $25M</option>
+      <option value="50000000">Min TVL · $50M</option>
+      <option value="100000000">Min TVL · $100M</option>
+    </select>
+    <span class="result-count" id="result-count">—</span>
+  </section>
+  <div class="category-rail" id="category-rail" aria-label="Filter by category"></div>
+
+  <div class="board-wrap">
+    <table class="board" id="board-table" aria-label="Pre-token protocols ranked by implied launch value">
+      <thead>
+        <tr>
+          <th data-sort="rank" class="num">#<span class="sort-mark"></span></th>
+          <th data-sort="name">Protocol<span class="sort-mark"></span></th>
+          <th data-sort="category">Category<span class="sort-mark"></span></th>
+          <th data-sort="tvl" class="num">TVL<span class="sort-mark"></span></th>
+          <th data-sort="change" class="num">7d Δ<span class="sort-mark"></span></th>
+          <th data-sort="rank" class="num">Implied FDV<span class="sort-mark"></span></th>
+          <th>p25–p75</th>
+          <th>Confidence</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="board-body"></tbody>
+    </table>
+    <div class="empty-state" id="empty-state" hidden>Nothing matches that filter. <b>Clear the search</b> or widen the category.</div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="conf-dot" style="background:var(--mint);width:8px;height:8px;border-radius:999px"></span> comp-backed (n≥8)</span>
+    <span class="item"><span class="conf-dot" style="background:var(--gold);width:8px;height:8px;border-radius:999px"></span> thin comps (3–7)</span>
+    <span class="item"><span class="conf-dot" style="background:var(--faint);width:8px;height:8px;border-radius:999px"></span> global prior (n&lt;3)</span>
+    <span class="item"><span style="display:inline-block;width:14px;height:3px;background:var(--gold);vertical-align:2px;border-radius:2px"></span> gold edge = house watchlist (≥ $50M, no token on record)</span>
+    <span class="item">whisker = 50% interval, log scale, dot = implied value</span>
+  </div>
+</main>
+
+<section id="live-panel" role="tabpanel" aria-labelledby="tab-live" hidden>
+  <p class="live-banner">The <b>24 largest token-carrying, non-CEX protocols</b> by market cap — the market&rsquo;s own pricing, shown as the board&rsquo;s reference frame. The board never ranks them.</p>
+  <div class="board-wrap">
+    <table class="board" aria-label="Live-token protocols by market cap">
+      <thead><tr><th class="num">#</th><th>Protocol</th><th>Category</th><th class="num">TVL</th><th class="num">Mcap</th><th class="num">Mcap / TVL</th><th class="num">7d Δ</th></tr></thead>
+      <tbody id="live-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- detail drawer -->
+<div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <div class="drawer-head">
+    <div>
+      <h2 id="drawer-title">—</h2>
+      <div class="slug" id="drawer-slug">—</div>
+      <div class="chip-row" id="drawer-chips"></div>
+    </div>
+    <button class="close-btn" id="drawer-close" aria-label="Close detail view">✕</button>
+  </div>
+
+  <div class="stat-grid" id="drawer-stats"></div>
+
+  <div class="section-label">How this price was built</div>
+  <div class="waterfall" id="drawer-waterfall"></div>
+  <div class="backtest-line" id="drawer-backtest"></div>
+  <div id="drawer-caveats"></div>
+
+  <div class="section-label">Farm plan — eight steps, in order</div>
+  <div class="farm-progress"><div class="track"><div class="fill" id="farm-fill"></div></div><div class="n" id="farm-count">0/8</div></div>
+  <div id="drawer-farm"></div>
+  <button class="copy-btn" id="copy-plan">Copy plan as text</button>
+
+  <p class="drawer-disclaimer">Farm plans are worked examples of the economics, not a guarantee of any allocation or airdrop. Implied value is a model output from a sealed 2026-11-14 snapshot of DefiLlama&rsquo;s public record; it is not a price target, not investment advice, and not a claim that a token exists or will. DefiLlama&rsquo;s record says &ldquo;no token carried&rdquo;, never &ldquo;no token&rdquo;. Two runs of this entry from the same snapshot write the same bytes.</p>
+</aside>
+
+<!-- methodology modal -->
+<div class="modal-backdrop" id="methodology" role="dialog" aria-modal="true" aria-labelledby="methodology-title" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-close-row">
+      <h2 id="methodology-title">Methodology — every number, checkable</h2>
+      <button class="close-btn" id="methodology-close" aria-label="Close methodology">✕</button>
+    </div>
+
+    <h3>The question</h3>
+    <p>What would this protocol&rsquo;s token be worth if it launched one, with the protocol&rsquo;s record exactly as it stands today? The radar answers with a pricing heuristic from the snapshot&rsquo;s own figures, states the interval it deserves, and refuses to pretend the answer is precise.</p>
+
+    <h3>The method (model radar-3)</h3>
+    <pre>r        = ln(mcap / TVL)            one per token-carrying protocol, ex-CEX
+r_hat    = (n · median_cat + k · median_global) / (n + k),   k = 16
+implied  = TVL · exp(r_hat)         50% interval from the category&rsquo;s own p25–p75</pre>
+    <ul>
+      <li>Comparables: protocols with <code>mcap_usd &gt; 0</code> and category other than <code>CEX</code> — <b id="m-comp-n">—</b> of them in this snapshot.</li>
+      <li>Categories with fewer than 3 comparables price entirely off the global prior (median multiple <b id="m-global-mult">—</b>).</li>
+      <li><b>No growth or age multiplier, deliberately.</b> On this snapshot, 7d TVL change correlates with ln(mcap/TVL) at ≈ <b>−0.08</b> (n=119) and age at ≈ <b>−0.04</b> (n=87) — indistinguishable from zero, so a multiplier would be noise dressed as signal. The dashboard shows these figures rather than hiding them.</li>
+      <li>The watchlist is the floor, never a ceiling. Early finds below the floor mirror the house rule as the ten fields allow: CEX and bridge/staking-product categories excluded, names matching wrapped/staked/staking or an exchange&rsquo;s name excluded, version-marker names excluded.</li>
+    </ul>
+
+    <h3>The evidence — leave-one-out, honest</h3>
+    <pre id="m-backtest">loading…</pre>
+    <p>Interpretation: the median miss is large and the interval is wide, because the market&rsquo;s own pricing of tokens is genuinely dispersed (the global interquartile range of mcap/TVL spans <b id="m-q25">—</b>× to <b id="m-q75">—</b>×). The model&rsquo;s job is ordering and honesty, not precision — a point where the field&rsquo;s tools usually lie.</p>
+
+    <h3>Comparables by category</h3>
+    <table id="m-categories" aria-label="Comparables by category"><thead><tr><th>Category</th><th>n</th><th>raw mcap/tvl</th><th>shrunk</th><th>p25</th><th>p75</th></tr></thead><tbody></tbody></table>
+
+    <h3>Distribution of the board</h3>
+    <div id="m-buckets"></div>
+
+    <h3>What this does not know</h3>
+    <ul>
+      <li>No fees, revenue, emissions, unlocks or holder data — the snapshot carries ten fields and the model uses nothing else. Implied value here is TVL times a comps multiple, nothing more.</li>
+      <li>The DefiLlama record is not proof a token will or will not exist; a row may already have a token its record does not carry, and a watchlist row may never launch one.</li>
+      <li>The house rule that kept the watchlist leaned on a parent-protocol record this snapshot does not carry; the board&rsquo;s early finds mirror its name and category tests, which is the closest the ten fields allow.</li>
+      <li>Nothing here is investment advice. Farm sizes are worked examples; airdrops are never guaranteed.</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div><b>Snapshot:</b> <span id="footer-source">—</span><br><b>As of:</b> <span id="footer-asof">—</span> · <b>Model:</b> radar-3 · <b>License:</b> MIT</div>
+  <div style="text-align:right">Entered for make.fun&rsquo;s <b>“Build the best token launch radar”</b> (token-radar-01).<br>Standard library only · renders with no network · two runs, one set of bytes.</div>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

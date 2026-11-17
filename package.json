@@ -1,0 +1,20 @@
+{
+  "name": "token-radar-01",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Token Launch Radar \u2014 pre-token protocols in a sealed DefiLlama snapshot, priced against market comparables, each with an eight-step farm plan. Built for make.fun's token-radar-01 bounty.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "node main.ts",
+    "smoke": "node scripts/smoke.mjs",
+    "screenshots": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^153.0.0",
+    "puppeteer-core": "^25.18.0"
+  }
+}
