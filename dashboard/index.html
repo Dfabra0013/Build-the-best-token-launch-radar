@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Signal Atlas — Token Launch Radar</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Signal Atlas home">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span><strong>Signal Atlas</strong><small>Launch intelligence, not launch promises</small></span>
+    </a>
+    <div class="header-status">
+      <span class="status-dot"></span>
+      <span>Snapshot sealed</span>
+      <span class="separator">•</span>
+      <span id="asOf">Loading date</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div class="eyebrow"><span class="pulse"></span> PRE-TOKEN SIGNAL DESK</div>
+      <div class="intro-grid">
+        <div>
+          <h1 id="pageTitle">Find the protocols worth <em>understanding</em> before a token exists.</h1>
+          <p class="lede">A peer-calibrated launch-value scenario built from the sealed protocol snapshot. It ranks recorded no-token candidates by TVL, momentum, maturity, chain breadth, and live-token comparables—then turns every row into a costed, conservative research plan.</p>
+          <div class="intro-actions">
+            <button class="primary" id="jumpToBoard">Explore the ranked board <span>↓</span></button>
+            <button class="quiet" id="openMethod">How the model works <span>↗</span></button>
+          </div>
+        </div>
+        <aside class="model-card" aria-label="Model summary">
+          <div class="model-card-top"><span>MODEL 01</span><span id="coverageBadge">Coverage</span></div>
+          <div class="formula"><span>TVL</span><b>×</b><span>Peer multiple</span><b>×</b><span>Signal factors</span></div>
+          <div class="factor-track" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <p>Every multiple is fitted from tokened protocols in this same snapshot. No hardcoded protocol leaderboard.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="metric-strip" aria-label="Radar statistics">
+      <article><span class="metric-label">Ranked candidates</span><strong id="candidateCount">—</strong><small>no-token records</small></article>
+      <article><span class="metric-label">Watchlist covered</span><strong id="watchlistCount">—</strong><small>of sealed-screen protocols</small></article>
+      <article><span class="metric-label">Peer evidence</span><strong id="peerCount">—</strong><small>tokened comparables</small></article>
+      <article><span class="metric-label">Median peer multiple</span><strong id="medianMultiple">—</strong><small>market cap / TVL</small></article>
+    </section>
+
+    <section class="workspace" id="board" aria-labelledby="boardTitle">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">RANKED BOARD</div>
+          <h2 id="boardTitle">Opportunity is a queue, not a feed.</h2>
+        </div>
+        <p id="resultSummary" aria-live="polite"></p>
+      </div>
+
+      <div class="controls" aria-label="Board filters">
+        <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search protocol or chain" autocomplete="off"></label>
+        <label class="select-field"><span>Sector</span><select id="categoryFilter"><option value="all">All sectors</option></select></label>
+        <label class="select-field"><span>Chain</span><select id="chainFilter"><option value="all">All chains</option></select></label>
+        <button id="watchlistFilter" class="filter-toggle" aria-pressed="false">Watchlist only <span id="watchlistFilterCount">0</span></button>
+        <button id="momentumFilter" class="filter-toggle" aria-pressed="false">Positive momentum</button>
+        <button id="clearFilters" class="clear">Clear</button>
+      </div>
+
+      <div class="board-layout">
+        <div class="board-shell">
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><button data-sort="rank">Rank <span>↕</span></button></th>
+                  <th><button data-sort="name">Protocol <span>↕</span></button></th>
+                  <th><button data-sort="implied_value_usd">Implied value <span>↕</span></button></th>
+                  <th><button data-sort="tvl_usd">TVL <span>↕</span></button></th>
+                  <th><button data-sort="change_7d">7d signal <span>↕</span></button></th>
+                  <th><button data-sort="peer_multiple">Peer fit <span>↕</span></button></th>
+                  <th>Research path</th>
+                </tr>
+              </thead>
+              <tbody id="boardRows"></tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span id="pageStatus"></span><div class="pager"><button id="previousPage" aria-label="Previous page">←</button><span id="pageLabel"></span><button id="nextPage" aria-label="Next page">→</button></div></div>
+        </div>
+        <aside class="side-panel" aria-label="Model legend">
+          <div class="panel-kicker">READ THE SIGNAL</div>
+          <h3>Value is a scenario.<br>Actions are optional.</h3>
+          <ul class="legend">
+            <li><span class="legend-dot high"></span><div><strong>High confidence</strong><small>Deep peer sample + complete fields</small></div></li>
+            <li><span class="legend-dot medium"></span><div><strong>Medium confidence</strong><small>Useful evidence, wider uncertainty</small></div></li>
+            <li><span class="legend-dot early"></span><div><strong>Early signal</strong><small>Research first; size nothing by rank</small></div></li>
+          </ul>
+          <div class="risk-note"><span>!</span><p>No row predicts a launch, reward, or eligibility. The playbook is deliberately capped and reversible.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="method" id="method" aria-labelledby="methodTitle">
+      <div class="method-copy"><div class="eyebrow">THE VALUATION LENS</div><h2 id="methodTitle">A model you can inspect.</h2><p>The radar starts with the snapshot’s tokened protocols, fits robust category-level market-cap-to-TVL peers, and applies only observable adjustments. It never assumes an airdrop or uses a protocol-name whitelist.</p></div>
+      <div class="method-steps" id="methodSteps"></div>
+    </section>
+  </main>
+
+  <aside class="detail-drawer" id="detailDrawer" aria-hidden="true" aria-labelledby="detailName">
+    <div class="drawer-top"><button id="closeDrawer" class="icon-button" aria-label="Close detail">×</button><span id="detailRank">#—</span></div>
+    <div id="detailContent"></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <footer><span>Signal Atlas</span><span>Offline dashboard • Snapshot-derived • Research, not financial advice</span></footer>
+  <script src="radar-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

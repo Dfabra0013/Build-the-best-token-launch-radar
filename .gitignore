@@ -1,0 +1,21 @@
+# Local grade artifacts and downloaded competition materials
+out/
+output/
+kit/
+input/
+*.tar.gz
+
+# Local tooling
+node_modules/
+.npm/
+coverage/
+.DS_Store
+
+# Credentials and private agent state
+.env
+.env.*
+!.env.example
+.makefun/*.json
+!.makefun/
+!.makefun/owner.json
+makefun-keypair.json
